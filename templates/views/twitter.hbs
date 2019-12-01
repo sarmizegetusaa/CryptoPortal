@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-w+8Gqjk9Cuo6XH9HKHG5t5I1VR4YBNdPt/29vwgfZR485eoEJZ8rJRbm3TR32P6k" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Twitter</title>
+</head>
+<body>
+    {{>header}}
+     <div class="reddit-nav">
+        <div class="twitter social-media"><a href="http://localhost:3000/twitter?searchTerm=bitcoin&time=day"><img
+                    class="reddit" src="/img/twitter/logo.png" alt=""></a></div>
+        <div class="words">
+            <nav class="navbar coins navbar-primary">
+                <a class="navbar-brand text-warning bitcoin {{#ifEquals searchTerm "bitcoin"}}active{{/ifEquals}}"
+                    href="/twitter?searchTerm=bitcoin">Bitcoin</a>
+                <a class="navbar-brand text-warning ethereum {{#ifEquals searchTerm "ethereum"}}active{{/ifEquals}}"
+                    href="/twitter?searchTerm=ethereum">Ethereum</a>
+                <a class="navbar-brand text-warning crypto {{#ifEquals searchTerm "crypto"}}active{{/ifEquals}}"
+                    href="/twitter?searchTerm=crypto">Crypto</a>
+                <a class="navbar-brand text-warning blockchain {{#ifEquals searchTerm "blockchain"}}active{{/ifEquals}}"
+                    href="/twitter?searchTerm=blockchain">Blockchain</a>
+
+            </nav>
+        </div>
+    </div>
+
+    <div class='tweet-principal-container'>
+        <div class="twitter-container">
+            <h3>Popular {{searchTerm}} tweets <img class="twitter-logo" src="/img/twitter/logo.png" alt=""></a></h3>
+
+            {{#each tweets as |tweet idx|}}
+            <div class="tweet" tweetID="{{tweet.twitterId}}"></div>
+            <br />
+            {{else}}
+            No results found.
+            {{/each}}
+        </div>
+    </div>
+
+
+<script>
+
+    window.onload = (function () {
+
+        var tweetContainers = document.querySelectorAll('.tweet');
+        tweetContainers.forEach(function (tweetContainer) {
+            var id = tweetContainer.getAttribute("tweetID");
+
+            twttr.widgets.createTweet(
+                id, tweetContainer,
+                {
+                    conversation: 'none',    // or all
+                    cards: 'visible',  // or visible 
+                    linkColor: '#cc0000', // default is blue
+                    theme: 'dark'    // or dark
+                })
+                .then(function (el) {
+                    // el.contentDocument.querySelector(".footer").style.display = "none";
+                });
+        });
+
+
+    });
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,539 @@
+/*Coins header*/
+#prices{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr)
+}
+.coin-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr
+}
+.coin-name{
+    width: 30px;
+}
+.price-change{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding-left: 5px;
+}
+.coin-price, .coin-change{
+    font-size: 0.75rem;
+    color: #a9a9a9;
+}
+.active {
+    color: #f9f9f9 !important;
+}
+
+#search-terms, #time{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.words .navbar {
+    display: block !important;
+}
+.nav-primary{
+    background: #171717;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+}
+.nav-secondary{
+    padding: 5px;
+    background: #171717;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+.categories{
+    margin-left: 68px;
+    font-weight: 700;
+}
+.category:hover{
+    color:orange !important;
+}
+
+
+/* Social Media */
+.open{
+    display: block;
+}
+.logo-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 500px;
+}
+.logo{
+    margin-left: 60px;
+}
+.reddit{
+    background-image: url(/img/reddit/logo.png);
+    width: 40px;
+    transition: transform 2s;
+}
+.youtube-logo{
+    width: 40px;
+    transition: width 2s, height 2s, transform 2s;
+}
+.social-media{
+    margin-top: 15px;
+    margin-left: 78px;
+    transition: all 1s ease-out;
+}
+.reddit:hover {
+     transform: rotate(180deg); 
+}
+
+.time{
+    font-size: 0.8rem;
+    color: #a9a9a9;
+}
+/* Reddit */
+.container-reddit{
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    margin-top: 20px; 
+    margin-left: 78px;
+    margin-right: 78px;
+    border: 1px solid #333;
+    padding: 10px;
+}
+.reddit-nav{
+    display: grid;
+    grid-template-columns: 1fr 12fr;
+}
+.left-reddit{
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+}
+.right-reddit{
+    overflow: hidden;
+}
+
+.bottom-container-reddit{
+    display: grid;
+    grid-template-columns: 1fr 5fr 19fr;
+    align-content: flex-start;
+    margin-top: 15px;
+}
+.thumbnail-r{
+    border-radius: 10%;
+    width: 100px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.score-container{
+    align-self: center;
+    text-align: center;
+}
+.score-reddit{
+    align-self: center;
+}
+.arrow-up, .arrow-down{
+    color: #ccc;
+    width: 10px
+}
+.title-reddit{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+}
+.subreddit{
+    font-size: 0.9rem;
+    margin-bottom: 0.7rem;
+    color: #a9a9a9;
+}
+.expand-text-reddit{
+    background: transparent url(/img/reddit/expand1.svg) center center no-repeat;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    background-size: 80%;
+    outline: none;
+}
+.comments-reddit{
+    color: #cccccc;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.url-extern-reddit{
+    background: url(/img/reddit/link.svg);
+    width: 30px;
+}
+.post-text-reddit{
+    margin: 10px;
+    color: #ccc;
+    font-size: 0.9rem;
+    display: none;
+    padding-top: 15px;
+    grid-column: 1/3;
+}
+.contract-text-reddit{
+    background: transparent url(/img/reddit/contract1.svg) center center no-repeat;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    background-size: 80%;
+}
+.main-image{
+    width: 500px;
+    display: none;
+}
+.score-container2{
+    display: none;
+}
+/* Twitter */
+.tweet-principal-container{
+    text-align: center;
+    width: 100%;
+}
+.twitter-container{
+    display: inline-block;
+    text-align: center;
+    padding-top: 30px;
+}
+.twitter-container h3{
+    font-size: 1.5rem;
+}
+#tweet {
+    width: 400px !important;
+  }
+
+  #tweet iframe {
+    border: none !important;
+    box-shadow: none !important;
+  }
+.twitter-logo{
+    width: 40px;
+}
+
+/*Youtube*/
+.youtube-results{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 80px;
+    margin-right: 80px;
+    grid-gap: 10px;
+    margin-top: 40px;
+}
+.video-container{
+    display: grid;
+    grid-template-rows: 1.5fr 1fr;
+}
+.youtube-title{
+    font-size: 0.8rem;
+    color: #d2d2d2;
+    width: 310px;
+    padding-top: 5px;
+    padding-bottom: 6px;
+    letter-spacing: 2px;
+
+}
+.youtube-channel{
+    font-size: 0.6rem;
+    color: #807e7e;
+
+}
+
+.item {
+    width: 300px;
+    margin: 12px;
+    float: left;
+  }
+  .item:hover{
+      transform: scale(1.05)
+  }
+#container-wrapper{
+    text-align: center;
+}
+
+
+/* Social media all */
+#all{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 70vw;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.tweets {
+    width: 370px !important;
+    padding-top: 10px;
+}
+
+/* reddit all */
+#all-reddit{
+    text-align: left;
+}
+#all-reddit .container-reddit{   
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    margin-right: 25px;
+    border: 1px solid #333;
+    padding: 10px;
+    margin-top: 20px;
+    width: 381px;
+}
+#all-reddit .small-reddit-logo{
+    width: 20px;
+    float: right;
+}
+#all-reddit .right-reddit{
+    padding-left: 15px;
+}
+#all-reddit .thumbnail-r{
+    width: 310px;
+}
+#all-reddit .title-reddit{
+    font-size: 1rem;
+}
+#all-reddit .comments-reddit{
+    font-size: 0.6rem;
+}
+#all-reddit .score-container2{
+    display: inline-block;
+    font-size: 0.7rem;
+    margin-top: -10px;
+    margin-right: 20px;
+}
+#all-reddit .bottom-container-reddit{
+    grid-template-columns: 3fr 1fr 16fr 10fr;
+}
+#all-reddit .main-image{
+    width: 320px;
+}
+#all .video-container{
+    padding-top: 20px;
+}
+#all #all-youtube {
+    padding-left: 35px;
+}
+#all .small-youtube-logo{
+    float: right;
+    width: 20px;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 1300px){
+    #all {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .youtube-results{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (max-width: 980px) {
+    #all {
+        grid-template-columns: 1fr 1rf;
+    }
+    #prices :nth-child(3) {
+        display: none;
+    }
+    #prices{
+        grid-template-columns: 1fr 1fr 1fr 1fr
+    }
+    #prices img {
+        width: 25px;    
+    }
+    .coin-price, .coin-change{
+        font-size: 0.5rem
+    }
+    .title-reddit{
+        font-size: 1rem;
+    }
+    .comments-reddit{
+        font-size: 0.7rem;
+    }
+    
+    /*youtube*/
+    .youtube-results{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .video iframe{
+        width: 350px;
+        height: 250px;
+    }
+    .video-container {
+        display: grid;
+        grid-template-rows: 2fr 1fr;
+    }
+    .youtube-title{
+        width: 340px;
+    }
+  }
+@media only screen and (max-width: 920px){
+    .video iframe{
+        width: 300px;
+        height: 220px;
+    }
+    .video-container {
+        display: grid;
+        grid-template-rows: 2fr 1fr;
+    }
+    .youtube-title{
+        width: 290px;
+    }
+    #all{
+        grid-template-columns: 1fr;
+        padding-left: 0px;
+    }
+}
+@media only screen and (max-width: 780px) {
+    .words .text-warning{
+        font-size: 1rem !important;
+    }
+    .words .time{
+        font-size: 0.6rem !important;
+    }
+    .url-extern-reddit{
+        font-size: 0.7rem;
+    }
+    .comments-reddit{
+        font-size: 0.6rem;
+    }
+    .post-text-reddit{
+        font-size: 0.8rem;
+    }
+    .score-container{
+        font-size: 0.7rem;
+    }
+    /*youyube*/
+    .youtube-results{
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 40px;
+    }
+    .video iframe{
+        width: 550px;
+        height: 320px;
+    }
+    .video-container {
+        display: grid;
+        grid-template-rows: 2fr 1fr;
+    }
+    .youtube-title{
+        width: 540px;
+    }
+  }
+
+@media only screen and (max-width: 680px) {
+    #prices :nth-child(3) {
+        display: none;
+    }
+    #prices :nth-child(4) {
+        display: none;
+    }
+    #prices :nth-child(5) {
+        display: none;
+    }
+    #prices{
+        grid-template-columns: 1fr 1fr
+    }
+    .words .text-warning{
+        font-size: 0.8em !important;
+    }
+    .words .time{
+        font-size: 0.5rem !important;
+    }
+    /*youtube*/
+    .video iframe{
+        width: 450px;
+        height: 280px;
+    }
+    .youtube-title{
+        width: 440px;
+    }
+    .main-image{
+        width: 320px;
+    }
+  }
+
+  @media only screen and (max-width: 610px) {
+    .container-reddit{
+        display: flex;
+        flex-direction: column;
+        margin-left: 25px;
+        margin-right: 25px;     
+    }
+    .social-media{
+        margin-left: 25px;
+    }
+    .thumbnail-r{
+        width: 350px;
+        margin-left: 20px;
+    }
+    .left-reddit{
+        display: inline;
+    }
+    .score-container{
+        float: left;
+        font-size: 0.7rem;
+        display: none;
+    }
+    .score-container2{
+        display: inline-block;
+        font-size: 0.7rem;
+        margin-top: -10px;
+        margin-right: 20px;
+    }
+    .arrow-up, .arrow-down {
+        color: #ccc;
+        width: 7px;
+        
+    }
+    .right-reddit{
+        margin-left: 20px;
+    }
+    .bottom-container-reddit {
+        grid-template-columns: 3fr 1fr 16fr 10fr;
+    }
+  }
+  @media only screen and (max-width: 580px) {
+       /*youtube*/
+    .video iframe{
+        width: 400px;
+        height: 230px;
+    }
+    .youtube-title{
+        width: 400px;
+    }
+  }
+
+  @media only screen and (max-width: 510px) {
+    .container-reddit{
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr        
+    }
+    .thumbnail-r{
+        width: 200px;
+        margin-left: 20px;
+    }
+    .left-reddit{
+        display: inline;
+    }
+    .title-reddit{
+        font-size: 0.8rem;
+    }
+
+    .subreddit{
+        font-size: 0.7rem;
+    }
+    .score-reddit{
+        font-size: 0.5rem
+    }
+
+    .tweet{
+        width: 380px;
+    }
+    .tweet p{
+        font-size: 0.85rem;
+    }
+     /*youtube*/
+     .video iframe{
+        width: 380px;
+        height: 210px;
+    }
+    .youtube-title{
+        width: 370px;
+    }
+  }

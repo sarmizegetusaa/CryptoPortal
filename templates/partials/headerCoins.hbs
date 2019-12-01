@@ -1,0 +1,10 @@
+{{#each outputs as |output outputId|}}
+<div class="coin-container">
+    <img class="coin-name" src="{{output.pair}}" alt="">
+
+    <div class="price-change">
+        <div class="coin-price">{{priceUsd}} {{priceUsd.priceUsd}}$</div>
+        <div class="coin-change">{{change24h}} {{change24h.change24h}}%</div>
+    </div>
+</div>
+{{/each}}
