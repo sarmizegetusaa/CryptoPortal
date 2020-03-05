@@ -25,23 +25,10 @@ $(function() {
     });
 });
 
-
-
-//social media drop down
-document.getElementById('navbarDropdown').addEventListener('click', toggleMnu)
-let socialMediaMenu = document.getElementById('social-media-menu');
-function toggleMnu(){
-    if(socialMediaMenu.style.display == 'block'){
-        socialMediaMenu.style.display = 'none';
-    } else {
-        socialMediaMenu.style.display = 'block'
-    } 
-}
-
 var $container = $('.container');
 $container.imagesLoaded(function(){
   $container.masonry({
     itemSelector : '.item',
-    columnWidth : 340
+    // columnWidth : 3
   });
 });

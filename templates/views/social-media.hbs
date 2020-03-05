@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <title>Social Media</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,27 +13,25 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
-    <title>Social Media</title>
 </head>
 
 <body>
     {{>header}}
     
         
-    <div id="all">
+    <div id="all" class="grid">
+     
+        {{#each all as |all allId|}}
 
-        <div id="all-twitter">
-        {{#each allT as |allT allTId|}}
         {{#ifEquals type 'twitter'}}
-            <div class="tweets meme item" tweetID="{{twitterId}}"></div>
-        {{/ifEquals}}
-        {{/each}} 
+        <div class="all-twitter grid-item">
+            <div class="tweets" tweetID="{{twitterId}}"></div>
         </div>
-        
-        <div id="all-reddit">
-        {{#each allR as |allR allRId|}}
+        {{/ifEquals}}
+
         {{#ifEquals type 'reddit'}}
-            <div class="container-reddit meme item">
+        <div class="all-reddit grid-item">
+            <div class="container-reddit">
                 <div class="left-reddit">
                     <div class="thumbnail-reddit">
                         <img class="thumbnail-r" src="{{thumbnailR}} {{thumbnailR.thumbnailR}}" alt="">
@@ -60,14 +59,12 @@
                 </div>
                 <div class="post-text-reddit">{{text}} {{text.text}}<img class="main-image" src="{{imageR}}" alt=""></div>
             </div>
-        {{/ifEquals}}
-        {{/each}} 
         </div>
+        {{/ifEquals}}
 
-        <div id="all-youtube">
-        {{#each allY as |allY allYId|}}
         {{#ifEquals type 'youtube'}}
-            <div class="video-container meme item">
+        <div class="all-youtube social grid-item">
+            <div class="video-container">
                 <div class="video">
                     <iframe width="370" height="210" src="https://www.youtube.com/embed/{{videoId}}" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -79,15 +76,50 @@
                 <div class="youtube-channel">{{channel}}</div>
             </div>
             </div>
-        {{/ifEquals}}
-        {{/each}} 
         </div>
+        {{/ifEquals}}
 
-    </div>  
-<script>
+        {{/each}} 
+    </div>
+ 
+ <div id="footer-social">Footer</div>
 
-    window.onload = (function () {
+    <script src="https://platform.twitter.com/widgets.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
 
+        
+        let footer = document.getElementById('footer-social');
+        let more = 6;
+
+        let options = {
+            root: null,
+            rootMargins: "0px",
+            threshold: 0.5
+        }
+
+        let observer = new IntersectionObserver(handleIntersect, options);
+        observer.observe(footer);
+    
+        function handleIntersect(entries){
+            if(entries[0]){
+                console.log('something is intersecting with the viewport')
+                more +=3;
+                $(function() {
+                    $('#all .grid-item').hide();
+                    $(`#all .grid-item:lt(${more})`).show();
+                });
+
+            }
+        }
+
+
+
+        window.onload = (function () {
         var tweetContainers = document.querySelectorAll('.tweets');
         tweetContainers.forEach(function (tweetContainer) {
             var id = tweetContainer.getAttribute("tweetID");
@@ -104,16 +136,9 @@
                     // el.contentDocument.querySelector(".footer").style.display = "none";
                 });
         });
-
-
     });
 
-</script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <script src="https://platform.twitter.com/widgets.js"></script>
-    <script src="js/main.js"></script>
+    </script>
 </body>
 
 </html>

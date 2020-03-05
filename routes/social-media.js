@@ -3,19 +3,24 @@ const router = express.Router();
 const db = require('../src/db');
 
 router.get('/', (req, res) => {    
-    
-    let allT = [];
-    let allR = [];
-    let allY = [];
-    let sqlTwit = `SELECT DISTINCT twitterId FROM twitter LIMIT 15`;
+    let allResults = [];
+    let sqlTwit = `SELECT DISTINCT twitterId FROM twitter`;
     let sqlMemes = `SELECT DISTINCT image FROM memes`;
-    let sqlYoutube = `SELECT * FROM youtube LIMIT 21`;
+    let sqlYoutube = `SELECT * FROM youtube`;
     let sqlReddit = `SELECT * FROM reddit WHERE searchTerm='bitcoin' AND time='day'`;
+
+    function shuffle(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
 
     let queryT = db.query(sqlTwit, (err, rows)=>{
         if(err) throw err;
         rows.forEach(function(row) {
-            allT.push({
+            allResults.push({
                 type: 'twitter',
                 twitterId: row.twitterId,
             });
@@ -27,7 +32,7 @@ router.get('/', (req, res) => {
     let queryR = db.query(sqlReddit, (err, rows)=>{
         if(err) throw err;
         rows.forEach(function(row) {
-            allR.push({
+            allResults.push({
                 type: 'reddit',
                 titleR: row.title,
                 linkR: row.link,
@@ -43,12 +48,12 @@ router.get('/', (req, res) => {
                 time: row.time
             });
         });
-    })
+    });
     
     let queryY = db.query(sqlYoutube, (err, rows)=>{
         if(err) throw err;
         rows.forEach(function(row) {
-            allY.push({
+            allResults.push({
                 type: 'youtube',
                 videoId: row.videoId,
                 titleY: row.title,
@@ -56,14 +61,15 @@ router.get('/', (req, res) => {
                 thumbnailY: row.thumbnail
             });
         });
-    })
+    });
 
 
     setTimeout(()=>{
+        let all = shuffle(allResults)
+        console.log(all)
         res.render('social-media', {
-            allR: allR,
-            allT: allT,
-            allY: allY
+            all: all,
+            allString: JSON.stringify(all),
         })
     }, 1000)
 });

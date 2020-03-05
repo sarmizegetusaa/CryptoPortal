@@ -1,6 +1,4 @@
 const express = require('express');
-const mysql = require('mysql');
-const fetch = require('node-fetch');
 const router = express.Router();
 const db = require('../src/db');
 db.connect();

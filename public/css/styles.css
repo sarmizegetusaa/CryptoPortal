@@ -234,7 +234,7 @@
 }
 
 .item {
-    width: 300px;
+    width: 320px;
     margin: 12px;
     float: left;
   }
@@ -250,9 +250,10 @@
 #all{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 70vw;
+    width: 75vw;
     margin: 0 auto;
     padding-top: 20px;
+    grid-template-rows: auto;
 }
 .tweets {
     width: 370px !important;
@@ -260,52 +261,50 @@
 }
 
 /* reddit all */
-#all-reddit{
+.all-reddit{
     text-align: left;
+    width: 370px;
 }
-#all-reddit .container-reddit{   
+.all-reddit .container-reddit{   
     display: flex;
     flex-direction: column;
-    margin-left: 25px;
+    margin-left: 0px;
     margin-right: 25px;
     border: 1px solid #333;
     padding: 10px;
     margin-top: 20px;
-    width: 381px;
+    width: 370px;
 }
-#all-reddit .small-reddit-logo{
+.all-reddit .small-reddit-logo{
     width: 20px;
     float: right;
 }
-#all-reddit .right-reddit{
+.all-reddit .right-reddit{
     padding-left: 15px;
 }
-#all-reddit .thumbnail-r{
+.all-reddit .thumbnail-r{
     width: 310px;
 }
-#all-reddit .title-reddit{
+.all-reddit .title-reddit{
     font-size: 1rem;
 }
 #all-reddit .comments-reddit{
     font-size: 0.6rem;
 }
-#all-reddit .score-container2{
+.all-reddit .score-container2{
     display: inline-block;
     font-size: 0.7rem;
     margin-top: -10px;
     margin-right: 20px;
 }
-#all-reddit .bottom-container-reddit{
+.all-reddit .bottom-container-reddit{
     grid-template-columns: 3fr 1fr 16fr 10fr;
 }
-#all-reddit .main-image{
+.all-reddit .main-image{
     width: 320px;
 }
 #all .video-container{
     padding-top: 20px;
-}
-#all #all-youtube {
-    padding-left: 35px;
 }
 #all .small-youtube-logo{
     float: right;
@@ -314,6 +313,22 @@
     margin-right: 10px;
 }
 
+/* 
+.grid{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-item{
+    width: 370px;
+    padding: 20px;
+    min-height: 300px;
+} */
+#footer-social{
+    padding: 1rem 3rem 3rem 3rem;
+    background-color: #171717;
+    text-align: center;
+}
 @media only screen and (max-width: 1300px){
     #all {
         grid-template-columns: 1fr 1fr;
