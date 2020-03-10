@@ -66,7 +66,6 @@ router.get('/', (req, res) => {
 
     setTimeout(()=>{
         let all = shuffle(allResults)
-        console.log(all)
         res.render('social-media', {
             all: all,
             allString: JSON.stringify(all),

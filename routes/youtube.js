@@ -16,7 +16,6 @@ router.get('/', (req, res) => {
                 thumbnail: row.thumbnail
                 
             });
-            console.log('bla')
         });
         res.render('youtube', {
             youtube: 'youtube',
